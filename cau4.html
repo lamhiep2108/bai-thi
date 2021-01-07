@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<canvas width="500px" height="300px" id="canvas"></canvas>
+<body>
+<script>
+    class CirCle {
+        constructor(x, y, R, color) {
+            this.x = x;
+            this.y = y;
+            this.R = R;
+            this.color = color;
+        }
+        render() {
+            let canvas = document.getElementById("canvas");
+            this.ctx = canvas.getContext("2d");
+            this.ctx .beginPath();
+            this.ctx .arc(this.x,this.y,this.R, 0, 2 * Math.PI);
+            this.ctx .fillStyle=this.color;
+            this.ctx.fill()
+        }
+    }
+    let MyCirCle=new CirCle(10,10,100,"#000000")
+    MyCirCle.render();
+</script>
+</body>
+</html>
